@@ -1,12 +1,15 @@
+language: generic
 sudo: required
 services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  - docker build -t bitlibitloque/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run stephengrider/docker-react npm run test -- --coverage
+  - docker run -e CI=true bitlibitloque/docker-react npm run test
+# CHANGED AS VIDEO 98  WITH language:generic
+# - docker run bitlibitloque/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk

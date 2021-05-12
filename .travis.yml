@@ -11,16 +11,17 @@ script:
 # CHANGED AS VIDEO 98  WITH language:generic
 # - docker run bitlibitloque/docker-react npm run test -- --coverage
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-west-2"
-  app: "docker"
-  env: "Docker-env"
-  bucket_name: "elasticbeanstalk-us-west-2-306476627547"
-  bucket_path: "docker"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
-
+################################ for AWS (I don't use)
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"         # get from AWS
+#   app: "docker"
+#   env: "Docker-env"       # get from AWS
+#   bucket_name: "elasticbeanstalk-us-west-2-306476627547"   # get from AWS
+#   bucket_path: "docker"
+#   on:
+#     branch: master    # When merging to master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
+################################
